@@ -1,7 +1,7 @@
 const projects = [
   {
     id: "tesis-notus",
-    title: "On-Device NLP Modules",
+    title: "Notus (On-Device NLP Modules)",
     image: "/images/project-notus.png",
     imageLarge: "/images/project-notus.png",
     description:
@@ -15,14 +15,14 @@ const projects = [
   },
   {
     id: "etecsa-platform",
-    title: "Digital Transformation Assessment Platform",
+    title: "Tetradig (Digital Transformation Assessment Platform)",
     image: "/images/project-etecsa.png",
     imageLarge: "/images/project-etecsa.png",
     description:
       "I contributed to the database design and backend of a digital assessment platform for companies, with a Vue.js frontend and Spring Boot services.",
     longDescription:
-      "Digital transformation maturity models let organizations self-assess across dimensions such as processes, technology, culture and data governance, positioning themselves on a maturity scale from traditional operation to full digitalization. Their value lies in providing a roadmap to prioritize areas and measure progress, yet they often remain dispersed in documents and spreadsheets.\n\nI collaborated on TETR4DIG, a desktop application that digitizes the TETR4DIG maturity model used by ETECSA to assess digital transformation across organizational units. The project replaces manual evaluation processes with a centralized tool that standardizes survey application and result consolidation.\n\nMy contribution focused on database design and backend development: I modeled a normalized PostgreSQL schema to represent survey instruments, responses and results consistently across units without duplication or inconsistency when generating reports.\n\nHighlights:\n- Desktop interface in Java Swing, designed for non-technical evaluators with guided flows prioritizing clarity\n- Normalized PostgreSQL schema for instruments and survey results\n- Exportable reports by organizational unit\n- Developed in collaboration with ETECSA stakeholders over nine months\n\nStack: Java 22, Java Swing, PostgreSQL",
-    techs: ["Java", "Spring Boot", "Vue.js", "PostgreSQL", "HTML", "CSS"],
+      "Digital transformation maturity models let organizations self-assess across dimensions such as processes, technology, culture and data governance, positioning themselves on a maturity scale from traditional operation to full digitalization. Their value lies in providing a roadmap to prioritize areas and measure progress, yet they often remain dispersed in documents and spreadsheets.\n\nI collaborated on TETR4DIG, a desktop application that digitizes the TETR4DIG maturity model used by ETECSA to assess digital transformation across organizational units. The project replaces manual evaluation processes with a centralized tool that standardizes survey application and result consolidation.\n\nMy contribution focused on database design and backend development: I modeled a normalized PostgreSQL schema to represent survey instruments, responses and results consistently across units without duplication or inconsistency when generating reports.\n\nHighlights:\n- Desktop interface in Java Swing, designed for non-technical evaluators with guided flows prioritizing clarity\n- Normalized PostgreSQL schema for instruments and survey results\n- Exportable reports by organizational unit\n- Developed in collaboration with ETECSA stakeholders over nine months",
+    techs: ["Java 22", "Java Swing", "PostgreSQL"],
     links: [],
     status: "completed",
     category: "Full Stack",
