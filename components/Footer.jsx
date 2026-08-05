@@ -1,5 +1,9 @@
-// Footer with professional links and current year.
+"use client";
+
+import { useLang } from "../context/LanguageProvider";
+
 export default function Footer() {
+  const { t } = useLang();
   return (
     <footer className="mt-16 border-t border-brand-borderLight py-8 text-sm text-brand-mutedLight dark:border-brand-border dark:text-brand-muted">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
@@ -11,7 +15,7 @@ export default function Footer() {
             rel="noreferrer"
             className="transition hover:text-brand-mint"
           >
-            GitHub
+            {t("footer.github")}
           </a>
           <a
             href="https://linkedin.com/in/tu-perfil"
@@ -19,7 +23,7 @@ export default function Footer() {
             rel="noreferrer"
             className="transition hover:text-brand-mint"
           >
-            LinkedIn
+            {t("footer.linkedin")}
           </a>
         </div>
       </div>

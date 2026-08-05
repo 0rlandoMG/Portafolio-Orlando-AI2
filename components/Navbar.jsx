@@ -3,18 +3,19 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useLang } from "../context/LanguageProvider";
 
-const navItems = [
-  { label: "Home", href: "#top" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
-
-// Main navbar with internal navigation and dark/light mode toggle.
 export default function Navbar() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { lang, setLang, t } = useLang();
+
+  const navItems = [
+    { label: t("navbar.home"), href: "#top" },
+    { label: t("navbar.projects"), href: "#projects" },
+    { label: t("navbar.about"), href: "#about" },
+    { label: t("navbar.contact"), href: "#contact" },
+  ];
 
   useEffect(() => {
     setMounted(true);
@@ -36,7 +37,6 @@ export default function Navbar() {
           </span>
           Orlando Marrero
         </a>
-
         <nav
           aria-label="Main navigation"
           className="flex flex-wrap items-center gap-1 text-sm text-brand-mutedLight dark:text-brand-muted"
@@ -52,14 +52,24 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setTheme(nextTheme)}
-          aria-label="Toggle dark mode"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight font-mono text-xs text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:text-brand-mint"
-        >
-          {mounted ? (activeTheme === "dark" ? "light" : "dark") : "dark"}
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setLang(lang === "en" ? "es" : "en")}
+            aria-label={t("navbar.langToggleLabel")}
+            className="inline-flex h-10 min-w-[3rem] items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight px-3 text-xs font-semibold text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:text-brand-mint"
+          >
+            {lang === "en" ? t("navbar.langToggleEnglish") : t("navbar.langToggleSpanish")}
+          </button>
+          <button
+            type="button"
+            onClick={() => setTheme(nextTheme)}
+            aria-label="Toggle dark mode"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight font-mono text-xs text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:text-brand-mint"
+          >
+            {mounted ? (activeTheme === "dark" ? "light" : "dark") : "dark"}
+          </button>
+        </div>
       </div>
     </header>
   );

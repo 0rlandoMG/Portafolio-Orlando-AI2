@@ -1,0 +1,98 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "themeToggleLabel": "Tema",
+    "langToggleLabel": "Idioma",
+    "langToggleEnglish": "EN",
+    "langToggleSpanish": "ES"
+  },
+  "hero": {
+    "badge": "Disponible para roles de ingeniería de IA",
+    "title": "Orlando Marrero",
+    "subtitle": "Ingeniero de Software · Ingeniero de IA",
+    "description": "Ingeniero de software junior con 2 años de experiencia construyendo aplicaciones de escritorio y web, con experiencia práctica integrando modelos de lenguaje pequeños on-device en un sistema de transcripción de voz de producción como parte de una tesis de pregrado. Cómodo en todo el stack, desde UI de escritorio hasta servicios backend en Java / Spring Boot, con un enfoque creciente en inferencia local de LLM, pipelines de NLP y prompt engineering. Actualmente profundizando habilidades agenticas con LangGraph.",
+    "ctaDownload": "Descargar CV",
+    "ctaProjects": "Ver proyectos",
+    "assistantPrompt": "¿Qué me puedes contar sobre Orlando?",
+    "assistantIntro": "Construye sistemas de IA de extremo a extremo:",
+    "assistantList1": "inferencia de LLM on-device y pipelines de NLP",
+    "assistantList2": "backend Java / Spring Boot, PostgreSQL",
+    "assistantList3": "flujos agenticos con LangGraph"
+  },
+  "projects": {
+    "sectionTitle": "Trabajo real y aprendizaje continuo",
+    "sectionDescription": "Tres experiencias clave que reflejan mi enfoque en soluciones locales, sistemas backend sólidos y el avance hacia agentes de IA.",
+    "card": {
+      "viewDetails": "Ver detalles",
+      "inProgress": "En progreso",
+      "shipped": "Publicado"
+    },
+    "modal": {
+      "techsLabel": "Tecnologías",
+      "linksLabel": "Enlaces",
+      "close": "Cerrar"
+    },
+    "ids": {
+      "tesis-notus": {
+        "title": "Notus (On-Device NLP Modules)",
+        "description": "Módulos de corrección post-ASR y resumen con Phi-4-mini para el producto Notus, integrando WhisperX, llama.cpp y PyTorch en una solución de escritorio local.",
+        "category": "On-Device AI",
+        "longDescription": "Tesis de pregrado desarrollada para Ingenius para mejorar la calidad textual del sistema de transcripción Notus (basado en Whisper/WhisperX). Diseñé, implementé y evalué a fondo dos módulos impulsados por el modelo de lenguaje pequeño on-device Phi-4-mini, ejecutado íntegramente en local sin APIs externas para preservar la privacidad del audio.\n\nCorrección lingüística post-ASR: un pipeline de fragmentación, inferencia y validación post-generación que corrige puntuación, mayúsculas y homófonos mientras controla el riesgo de alucinación con validación basada en léxico. Evalué dos enfoques — validación por chunk con Jaccard/NPR y fusión léxica con NED a nivel de palabra — y seleccioné la solución más robusta usando un diseño experimental Taguchi L9 y pruebas estadísticas Friedman/Nemenyi.\n\nResumen automático: amplié un resumidor de estilo único para soportar tres estilos (académico, coloquial, técnico) y tres longitudes (corto, medio, largo), implementado con arquitectura Map-Reduce para superar la ventana de contexto del modelo en transcripciones largas.\n\nIntegración UI: integré ambos módulos en la UI de Notus (Flet/Flutter), implementando diálogos de configuración, indicadores de progreso asíncrono por fragmento, resultados renderizados en Markdown y acciones para copiar/guardar/regenerar manteniendo flujos visuales coherentes.\n\nEvaluación experimental: construí un corpus de 10 audios en español (~2.5 horas) con transcripciones humanas verificadas (RTVE, ONU, fuentes editoriales). Resultados: el corrector restaura la puntuación significativamente (ΔF1p = +0.0120, Wilcoxon p = 0.0039) con costo mínimo controlado en WER/CER y un daño léxico de 0.052% en palabras ya correctas. El resumidor alcanza un BERTScore promedio de 0.869 (rango 0.842–0.901) frente a referencias de Claude Sonnet 4.6, mostrando alta consistencia semántica entre estilos y longitudes.",
+        "techs": [
+          "Python",
+          "PyTorch",
+          "Flet",
+          "Phi-4-mini",
+          "llama.cpp",
+          "WhisperX",
+          "i18n"
+        ]
+      },
+      "etecsa-platform": {
+        "title": "Tetradig (Digital Transformation Assessment Platform)",
+        "description": "Contribuí al diseño de base de datos y backend de una plataforma de evaluación digital para empresas, con un frontend en Vue.js y servicios en Spring Boot.",
+        "category": "Full Stack",
+        "longDescription": "Los modelos de madurez de transformación digital permiten a las organizaciones autoevaluarse en procesos, tecnología, cultura y gobernanza de datos, ubicándolas en una escala desde operación tradicional hasta digitalización plena. Su valor está en dar una hoja de ruta de prioridades y medir el avance, pero a menudo permanecen dispersos en documentos y hojas de cálculo.\n\nColaboré en TETR4DIG, una aplicación de escritorio que digitaliza el modelo de madurez TETR4DIG usado por ETECSA para evaluar la transformación digital en unidades organizacionales. El proyecto reemplaza el proceso manual por una herramienta centralizada que estandariza la aplicación de encuestas y la consolidación de resultados.\n\nMi contribución se centró en el diseño de la base de datos y el desarrollo backend: modelé un esquema PostgreSQL normalizado para representar instrumentos, respuestas y resultados de forma consistente entre unidades, sin duplicación ni inconsistencia al generar reportes.\n\nPuntos destacados:\n- Interfaz de escritorio en Java Swing, diseñada para evaluadores no técnicos con flujos guiados claros\n- Esquema PostgreSQL normalizado para instrumentos y resultados de encuestas\n- Reportes exportables por unidad organizacional\n- Desarrollado en colaboración con stakeholders de ETECSA durante nueve meses",
+        "techs": [
+          "Java 22",
+          "Java Swing",
+          "PostgreSQL"
+        ]
+      },
+      "langgraph-agent": {
+        "title": "LangGraph Agent (Coming Soon)",
+        "description": "Proyecto en progreso que mostrará aprendizaje activo en agentes de IA con LangGraph y arquitecturas agenticas.",
+        "category": "AI Agents",
+        "longDescription": "Este proyecto está actualmente en progreso y estará disponible pronto.",
+        "techs": [
+          "LangGraph",
+          "IA Agents",
+          "Prompt Engineering"
+        ]
+      }
+    }
+  },
+  "about": {
+    "sectionTitle": "Sobre mí",
+    "title": "Impacto técnico mínimo con resultados reales",
+    "paragraph1": "Mi experiencia combina el desarrollo de aplicaciones de escritorio con la integración de modelos de lenguaje on-device, junto con APIs y diseño de UI accesible.",
+    "paragraph2": "Actualmente profundizo habilidades agenticas con LangGraph para avanzar hacia roles de ingeniería de IA enfocados en soluciones híbridas y locales.",
+    "keyAreasTitle": "Áreas clave",
+    "keyArea1": "Integración local de LLM y pipelines de NLP",
+    "keyArea2": "Full-stack: frontend, backend, bases de datos",
+    "keyArea3": "Accesibilidad, rendimiento y diseño SEO-minded"
+  },
+  "contact": {
+    "sectionTitle": "Contacto",
+    "title": "Construyamos algo con IA",
+    "github": "Ver GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  }
+}
