@@ -4,10 +4,40 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../context/LanguageProvider";
 
+const siteUrl = "https://orlandomarrero.dev"; // TODO: replace with your real deployed domain
+const title = "Orlando Marrero | AI Engineer & Software Engineer";
+const description =
+  "Portfolio of Orlando Marrero, Junior AI Engineer & Software Engineer specializing in local language model integration and full-stack development.";
+
 export const metadata = {
-  title: "Orlando Marrero | AI Engineer & Software Engineer",
-  description:
-    "Portfolio of Orlando Marrero, Junior AI Engineer & Software Engineer specializing in local language model integration and full-stack development.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  keywords: [
+    "Orlando Marrero",
+    "AI Engineer",
+    "Software Engineer",
+    "On-device AI",
+    "Local LLM",
+    "Full-stack developer",
+  ],
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: "Orlando Marrero",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -33,7 +33,7 @@ export default function Navbar() {
           className="flex items-center gap-2 text-sm font-semibold tracking-tight text-brand-textLight dark:text-brand-text"
         >
           <span className="relative h-7 w-7 overflow-hidden rounded-full border border-brand-borderLight dark:border-brand-border">
-            <Image src="/images/avatar-placeholder.jpg" alt="" fill className="object-cover" />
+            <Image src="/images/avatar.jpg" alt="" fill className="object-cover" />
           </span>
           Orlando Marrero
         </a>
@@ -57,7 +57,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setLang(lang === "en" ? "es" : "en")}
             aria-label={t("navbar.langToggleLabel")}
-            className="inline-flex h-10 min-w-[3rem] items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight px-3 text-xs font-semibold text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:text-brand-mint"
+            className="inline-flex h-10 min-w-[3rem] items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight px-3 text-xs font-semibold text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:border-brand-mint dark:hover:text-brand-mint"
           >
             {lang === "en" ? t("navbar.langToggleEnglish") : t("navbar.langToggleSpanish")}
           </button>
@@ -65,7 +65,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setTheme(nextTheme)}
             aria-label="Toggle dark mode"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight font-mono text-xs text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:text-brand-mint"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-brand-borderLight bg-brand-surfaceLight font-mono text-xs text-brand-mutedLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:bg-brand-surface dark:text-brand-muted dark:hover:border-brand-mint dark:hover:text-brand-mint"
           >
             {mounted ? (activeTheme === "dark" ? "light" : "dark") : "dark"}
           </button>

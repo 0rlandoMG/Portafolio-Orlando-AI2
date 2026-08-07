@@ -100,12 +100,6 @@ export default function ProjectCard({ project }) {
           <p className="mt-4 text-sm leading-6 text-brand-mutedLight dark:text-brand-muted">
             {t(`projects.ids.${project.id}.description`)}
           </p>
-          {project.stats ? (
-            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs text-brand-mutedLight dark:text-brand-muted">
-              <span>wilcoxon: {project.stats.wilcoxon}</span>
-              <span>bertscore_f1: {project.stats.bertscore}</span>
-            </div>
-          ) : null}
         </div>
       </article>
       <ProjectModal open={open} onClose={closeHandler} project={project} />

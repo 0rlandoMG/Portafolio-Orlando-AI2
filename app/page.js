@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import projects from "../data/projects";
@@ -7,6 +8,21 @@ import { useLang } from "../context/LanguageProvider";
 
 export default function HomePage() {
   const { t } = useLang();
+  const [copied, setCopied] = useState(false);
+  const email = "0rlandomarrerog@gmail.com";
+
+  async function handleCopyEmail(e) {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+    } catch {
+      // Clipboard API unavailable (e.g. insecure context) — fall back to mailto.
+      window.location.href = `mailto:${email}`;
+      return;
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
 
   return (
     <>
@@ -87,12 +103,19 @@ export default function HomePage() {
                 {t("contact.github")}
               </a>
               <a
-                href="https://linkedin.com/in/tu-perfil"
-                className="inline-flex items-center justify-center rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text"
+                href="https://www.linkedin.com/in/orlando-marrero-gonz%C3%A1les-415334428/"
+                className="inline-flex items-center justify-center rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text dark:hover:border-brand-mint dark:hover:text-brand-mint"
                 target="_blank"
                 rel="noreferrer"
               >
                 {t("contact.linkedin")}
+              </a>
+              <a
+                href="mailto:0rlandomarrerog@gmail.com"
+                onClick={handleCopyEmail}
+                className="inline-flex items-center justify-center rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text dark:hover:border-brand-mint dark:hover:text-brand-mint"
+              >
+                {copied ? t("contact.emailCopied") : t("contact.email")}
               </a>
             </div>
           </div>

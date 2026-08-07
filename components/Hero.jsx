@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="space-y-6">
           <div className="relative h-20 w-20 overflow-hidden rounded-full border border-brand-borderLight dark:border-brand-border">
             <Image
-              src="/images/avatar-placeholder.jpg"
+              src="/images/avatar.jpg"
               alt="Orlando Marrero"
               fill
               className="object-cover"
@@ -31,14 +31,15 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="/cv.pdf"
+              href="/Orlando_Marrero_Gonzalez_AI_Engineer_cv.pdf"
+              download="Orlando_Marrero_Gonzalez_AI_Engineer_cv.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-textLight px-5 py-3 text-sm font-semibold text-brand-bgLight transition hover:opacity-85 focus:outline-none focus:ring-2 focus:ring-brand-mint focus:ring-offset-2 focus:ring-offset-brand-bgLight dark:bg-brand-text dark:text-brand-bg dark:focus:ring-offset-brand-bg"
             >
               {t("hero.ctaDownload")}
             </a>
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text dark:hover:border-brand-mint dark:hover:text-brand-mint"
             >
               {t("hero.ctaProjects")}
             </a>

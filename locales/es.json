@@ -13,7 +13,7 @@
     "badge": "Disponible para roles de ingeniería de IA",
     "title": "Orlando Marrero",
     "subtitle": "Ingeniero de Software · Ingeniero de IA",
-    "description": "Ingeniero de software junior con 2 años de experiencia construyendo aplicaciones de escritorio y web, con experiencia práctica integrando modelos de lenguaje pequeños on-device en un sistema de transcripción de voz de producción como parte de una tesis de pregrado. Cómodo en todo el stack, desde UI de escritorio hasta servicios backend en Java / Spring Boot, con un enfoque creciente en inferencia local de LLM, pipelines de NLP y prompt engineering. Actualmente profundizando habilidades agenticas con LangGraph.",
+    "description": "Ingeniero de Software recién graduado (CUJAE, La Habana) con 2 años de experiencia construyendo aplicaciones de escritorio y web, incluyendo experiencia práctica integrando modelos de lenguaje pequeños on-device en un sistema de transcripción de voz de producción como parte de mi tesis de pregrado. Cómodo en todo el stack, desde UI de escritorio hasta servicios backend en Java / Spring Boot, con un enfoque creciente en inferencia local de LLM, pipelines de NLP y prompt engineering. Actualmente profundizando habilidades agenticas con LangGraph.",
     "ctaDownload": "Descargar CV",
     "ctaProjects": "Ver proyectos",
     "assistantPrompt": "¿Qué me puedes contar sobre Orlando?",
@@ -33,63 +33,52 @@
     "modal": {
       "techsLabel": "Tecnologías",
       "linksLabel": "Enlaces",
-      "close": "Cerrar"
+      "close": "Cerrar",
+      "resultsLabel": "Resultados"
     },
     "ids": {
       "tesis-notus": {
-        "title": "Notus (On-Device NLP Modules)",
-        "description": "Módulos de corrección post-ASR y resumen con Phi-4-mini para el producto Notus, integrando WhisperX, llama.cpp y PyTorch en una solución de escritorio local.",
+        "title": "Notus (Módulos de PLN On-Device)",
+        "description": "Módulos de corrección post-ASR y resúmenes con Phi-4-mini para el producto Notus, integrando WhisperX, llama.cpp, PyTorch y soporte de i18n en una solución de escritorio local.",
         "category": "On-Device AI",
-        "longDescription": "Tesis de pregrado desarrollada para Ingenius para mejorar la calidad textual del sistema de transcripción Notus (basado en Whisper/WhisperX). Diseñé, implementé y evalué a fondo dos módulos impulsados por el modelo de lenguaje pequeño on-device Phi-4-mini, ejecutado íntegramente en local sin APIs externas para preservar la privacidad del audio.\n\nCorrección lingüística post-ASR: un pipeline de fragmentación, inferencia y validación post-generación que corrige puntuación, mayúsculas y homófonos mientras controla el riesgo de alucinación con validación basada en léxico. Evalué dos enfoques — validación por chunk con Jaccard/NPR y fusión léxica con NED a nivel de palabra — y seleccioné la solución más robusta usando un diseño experimental Taguchi L9 y pruebas estadísticas Friedman/Nemenyi.\n\nResumen automático: amplié un resumidor de estilo único para soportar tres estilos (académico, coloquial, técnico) y tres longitudes (corto, medio, largo), implementado con arquitectura Map-Reduce para superar la ventana de contexto del modelo en transcripciones largas.\n\nIntegración UI: integré ambos módulos en la UI de Notus (Flet/Flutter), implementando diálogos de configuración, indicadores de progreso asíncrono por fragmento, resultados renderizados en Markdown y acciones para copiar/guardar/regenerar manteniendo flujos visuales coherentes.\n\nEvaluación experimental: construí un corpus de 10 audios en español (~2.5 horas) con transcripciones humanas verificadas (RTVE, ONU, fuentes editoriales). Resultados: el corrector restaura la puntuación significativamente (ΔF1p = +0.0120, Wilcoxon p = 0.0039) con costo mínimo controlado en WER/CER y un daño léxico de 0.052% en palabras ya correctas. El resumidor alcanza un BERTScore promedio de 0.869 (rango 0.842–0.901) frente a referencias de Claude Sonnet 4.6, mostrando alta consistencia semántica entre estilos y longitudes.",
-        "techs": [
-          "Python",
-          "PyTorch",
-          "Flet",
-          "Phi-4-mini",
-          "llama.cpp",
-          "WhisperX",
-          "i18n"
-        ]
+        "longDescription": "Qué es: tesis de pregrado desarrollada para Ingenius para mejorar la calidad textual del sistema de transcripción Notus (basado en Whisper/WhisperX).\n\nMi contribución: diseñé, implementé y evalué de principio a fin dos módulos de IA, los integré en la interfaz del producto, y además implementé soporte de internacionalización (i18n) para la interfaz — trabajo que fue más allá del documento de tesis en sí.\n\nCómo se hizo:\n- Corrección lingüística post-ASR: pipeline de fragmentación, inferencia y validación post-generación que corrige puntuación, mayúsculas y homófonos con el SLM on-device Phi-4-mini, controlando el riesgo de alucinación mediante validación léxica. Comparé dos estrategias de validación (Jaccard/NPR a nivel de fragmento vs. fusión léxica con NED a nivel de palabra) y elegí la más robusta mediante diseño experimental Taguchi L9 y pruebas estadísticas de Friedman/Nemenyi.\n- Resumen automático: amplié un resumidor de un solo estilo a 3 estilos (académico, coloquial, técnico) × 3 niveles de longitud, con arquitectura Map-Reduce para superar la ventana de contexto del modelo en transcripciones largas.\n- Integración en la interfaz: construí los flujos de interacción en la interfaz de Notus (Flet) — diálogos de configuración, indicadores de progreso asíncronos por fragmento, resultados renderizados en Markdown, y acciones de copiar/guardar/regenerar.\n- Internacionalización: agregué soporte multi-idioma (i18n) a la interfaz del producto.\n\nResultados: evaluado sobre un corpus propio de 10 audios en español (~2.5h) con transcripciones humanas verificadas (RTVE, ONU, ediciones editoriales).",
+        "stats": {
+          "summary": "Ambos módulos se validaron con pruebas estadísticas rigurosas sobre un corpus propio de audio en español. El módulo de corrección restauró la puntuación de forma significativa frente a la salida cruda de Whisper, con un efecto pequeño y controlado sobre la precisión de la transcripción. Los resúmenes generados se mantuvieron muy fieles al contenido original — cerca de lo que produce un modelo de referencia mucho más grande — en todos los estilos y longitudes evaluados.",
+          "wilcoxon": "ΔF1p +0.0120, p=0.0039",
+          "bertscore": "0.869 (0.842–0.901)"
+        }
       },
       "etecsa-platform": {
-        "title": "Tetradig (Digital Transformation Assessment Platform)",
-        "description": "Contribuí al diseño de base de datos y backend de una plataforma de evaluación digital para empresas, con un frontend en Vue.js y servicios en Spring Boot.",
+        "title": "Tetradig (Plataforma de Evaluación de Transformación Digital)",
+        "description": "Contribución full-stack (base de datos, backend e interfaz Swing) a una plataforma de escritorio que digitaliza la evaluación de madurez de transformación digital de ETECSA.",
         "category": "Full Stack",
-        "longDescription": "Los modelos de madurez de transformación digital permiten a las organizaciones autoevaluarse en procesos, tecnología, cultura y gobernanza de datos, ubicándolas en una escala desde operación tradicional hasta digitalización plena. Su valor está en dar una hoja de ruta de prioridades y medir el avance, pero a menudo permanecen dispersos en documentos y hojas de cálculo.\n\nColaboré en TETR4DIG, una aplicación de escritorio que digitaliza el modelo de madurez TETR4DIG usado por ETECSA para evaluar la transformación digital en unidades organizacionales. El proyecto reemplaza el proceso manual por una herramienta centralizada que estandariza la aplicación de encuestas y la consolidación de resultados.\n\nMi contribución se centró en el diseño de la base de datos y el desarrollo backend: modelé un esquema PostgreSQL normalizado para representar instrumentos, respuestas y resultados de forma consistente entre unidades, sin duplicación ni inconsistencia al generar reportes.\n\nPuntos destacados:\n- Interfaz de escritorio en Java Swing, diseñada para evaluadores no técnicos con flujos guiados claros\n- Esquema PostgreSQL normalizado para instrumentos y resultados de encuestas\n- Reportes exportables por unidad organizacional\n- Desarrollado en colaboración con stakeholders de ETECSA durante nueve meses",
-        "techs": [
-          "Java 22",
-          "Java Swing",
-          "PostgreSQL"
-        ]
+        "longDescription": "Qué es: TETR4DIG digitaliza el modelo de evaluación de madurez que usa ETECSA (la empresa nacional de telecomunicaciones de Cuba) para evaluar la transformación digital a través de sus unidades organizacionales. La iniciativa se materializó en dos aplicaciones separadas una de escritorio y una web complementaria desarrolladas por un equipo de 3 personas, reemplazando un proceso manual basado en hojas de cálculo por una herramienta centralizada.\n\nMi contribución: trabajé en todo el stack del proyecto — modelando la base de datos PostgreSQL compartida, construyendo la lógica de backend, implementando partes de la interfaz Java Swing de la app de escritorio, y contribuyendo al frontend de la app web. La versión que se muestra aquí es la aplicación de escritorio, que vive en mi propio GitHub.\n\nCómo se hizo:\n- Esquema PostgreSQL normalizado que representa instrumentos de encuesta, respuestas y resultados de forma consistente entre unidades organizacionales, compartido por ambas aplicaciones\n- Lógica de backend que conecta la interfaz Swing con la capa de base de datos\n- Interfaz de escritorio en Java Swing, diseñada para evaluadores no técnicos con flujos guiados que priorizan la claridad\n- Reportes exportables por unidad organizacional\n- Desarrollado en colaboración con stakeholders de ETECSA durante nueve meses"
       },
       "langgraph-agent": {
-        "title": "LangGraph Agent (Coming Soon)",
+        "title": "LangGraph Agent (Próximamente)",
         "description": "Proyecto en progreso que mostrará aprendizaje activo en agentes de IA con LangGraph y arquitecturas agenticas.",
         "category": "AI Agents",
-        "longDescription": "Este proyecto está actualmente en progreso y estará disponible pronto.",
-        "techs": [
-          "LangGraph",
-          "IA Agents",
-          "Prompt Engineering"
-        ]
+        "longDescription": "Este proyecto está actualmente en progreso y estará disponible pronto."
       }
     }
   },
   "about": {
     "sectionTitle": "Sobre mí",
-    "title": "Impacto técnico mínimo con resultados reales",
-    "paragraph1": "Mi experiencia combina el desarrollo de aplicaciones de escritorio con la integración de modelos de lenguaje on-device, junto con APIs y diseño de UI accesible.",
-    "paragraph2": "Actualmente profundizo habilidades agenticas con LangGraph para avanzar hacia roles de ingeniería de IA enfocados en soluciones híbridas y locales.",
+    "title": "Ingeniería práctica, resultados medibles",
+    "paragraph1": "Me gradué recientemente como Ingeniero de Software en la CUJAE (La Habana, Cuba). Mi experiencia combina el desarrollo de aplicaciones de escritorio con la integración de modelos de lenguaje on-device, sistemas backend y diseño de UI accesible.",
+    "paragraph2": "Actualmente profundizo mis habilidades agenticas con LangGraph, buscando roles de ingeniería de IA enfocados en soluciones híbridas y locales — sistemas que mantienen la inferencia on-device sin sacrificar calidad de producción.",
     "keyAreasTitle": "Áreas clave",
     "keyArea1": "Integración local de LLM y pipelines de NLP",
     "keyArea2": "Full-stack: frontend, backend, bases de datos",
-    "keyArea3": "Accesibilidad, rendimiento y diseño SEO-minded"
+    "keyArea3": "Validación estadística y diseño experimental (Wilcoxon, Taguchi, BERTScore)"
   },
   "contact": {
     "sectionTitle": "Contacto",
-    "title": "Construyamos algo con IA",
+    "title": "Construyamos algo juntos",
     "github": "Ver GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "email": "Correo",
+    "emailCopied": "¡Copiado!"
   },
   "footer": {
     "github": "GitHub",

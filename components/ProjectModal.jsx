@@ -13,6 +13,13 @@ export default function ProjectModal({ open, onClose, project }) {
   const localizedTitle = t(`projects.ids.${project.id}.title`);
   const localizedCategory = t(`projects.ids.${project.id}.category`, project.category || "");
   const localizedDescription = t(`projects.ids.${project.id}.longDescription`, project.longDescription || "");
+  const localizedStats = project.stats
+    ? {
+        summary: t(`projects.ids.${project.id}.stats.summary`, project.stats.summary),
+        wilcoxon: t(`projects.ids.${project.id}.stats.wilcoxon`, project.stats.wilcoxon),
+        bertscore: t(`projects.ids.${project.id}.stats.bertscore`, project.stats.bertscore),
+      }
+    : null;
 
   return (
     <Transition show={open} as={Fragment}>
@@ -73,10 +80,18 @@ export default function ProjectModal({ open, onClose, project }) {
                   <div className="mt-4 whitespace-pre-line text-sm leading-6 text-brand-mutedLight dark:text-brand-muted">
                     {localizedDescription}
                   </div>
-                  {project.stats && (
-                    <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs text-brand-mutedLight dark:text-brand-muted">
-                      <span>wilcoxon: {project.stats.wilcoxon}</span>
-                      <span>bertscore_f1: {project.stats.bertscore}</span>
+                  {localizedStats && (
+                    <div className="mt-5">
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-mint">
+                        {t("projects.modal.resultsLabel")}
+                      </p>
+                      <p className="text-sm leading-6 text-brand-mutedLight dark:text-brand-muted">
+                        {localizedStats.summary}
+                      </p>
+                      <div className="mt-2 flex flex-wrap gap-x-5 gap-y-1 font-mono text-xs text-brand-mutedLight/70 dark:text-brand-muted/70">
+                        <span>wilcoxon: {localizedStats.wilcoxon}</span>
+                        <span>bertscore_f1: {localizedStats.bertscore}</span>
+                      </div>
                     </div>
                   )}
                   <div className="mt-5">
