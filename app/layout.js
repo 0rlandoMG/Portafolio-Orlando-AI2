@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { LanguageProvider } from "../context/LanguageProvider";
 
-const siteUrl = "https://orlandomarrero.dev"; // TODO: replace with your real deployed domain
+const siteUrl = "https://orlandomarrero-dev.vercel.app"
 const title = "Orlando Marrero | AI Engineer & Software Engineer";
 const description =
   "Portfolio of Orlando Marrero, Junior AI Engineer & Software Engineer specializing in local language model integration and full-stack development.";

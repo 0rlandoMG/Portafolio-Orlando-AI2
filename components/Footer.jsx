@@ -18,7 +18,7 @@ export default function Footer() {
             {t("footer.github")}
           </a>
           <a
-            href="https://www.linkedin.com/in/orlando-marrero-gonz%C3%A1les-415334428/"
+            href="https://www.linkedin.com/in/orlando-marrero-g/"
             target="_blank"
             rel="noreferrer"
             className="transition hover:text-brand-mint"

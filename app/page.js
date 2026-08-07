@@ -16,7 +16,6 @@ export default function HomePage() {
     try {
       await navigator.clipboard.writeText(email);
     } catch {
-      // Clipboard API unavailable (e.g. insecure context) — fall back to mailto.
       window.location.href = `mailto:${email}`;
       return;
     }
@@ -103,7 +102,7 @@ export default function HomePage() {
                 {t("contact.github")}
               </a>
               <a
-                href="https://www.linkedin.com/in/orlando-marrero-gonz%C3%A1les-415334428/"
+                href="https://www.linkedin.com/in/orlando-marrero-g/"
                 className="inline-flex items-center justify-center rounded-md border border-brand-borderLight px-5 py-3 text-sm font-semibold text-brand-textLight transition hover:border-brand-mint hover:text-brand-mint dark:border-brand-border dark:text-brand-text dark:hover:border-brand-mint dark:hover:text-brand-mint"
                 target="_blank"
                 rel="noreferrer"

@@ -10,7 +10,7 @@
     "langToggleSpanish": "ES"
   },
   "hero": {
-    "badge": "Disponible para roles de ingeniería de IA",
+    "badge": "Disponible para roles de ingeniería",
     "title": "Orlando Marrero",
     "subtitle": "Ingeniero de Software · Ingeniero de IA",
     "description": "Ingeniero de Software recién graduado (CUJAE, La Habana) con 2 años de experiencia construyendo aplicaciones de escritorio y web, incluyendo experiencia práctica integrando modelos de lenguaje pequeños on-device en un sistema de transcripción de voz de producción como parte de mi tesis de pregrado. Cómodo en todo el stack, desde UI de escritorio hasta servicios backend en Java / Spring Boot, con un enfoque creciente en inferencia local de LLM, pipelines de NLP y prompt engineering. Actualmente profundizando habilidades agenticas con LangGraph.",

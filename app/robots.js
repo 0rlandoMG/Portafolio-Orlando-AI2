@@ -1,5 +1,5 @@
 export default function robots() {
-  const siteUrl = "https://orlandomarrero.dev"; // TODO: replace with your real deployed domain
+  const siteUrl = "https://orlandomarrero-dev.vercel.app"
 
   return {
     rules: {

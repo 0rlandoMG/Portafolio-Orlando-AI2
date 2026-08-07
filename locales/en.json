@@ -10,7 +10,7 @@
     "langToggleSpanish": "ES"
   },
   "hero": {
-    "badge": "Available for AI Engineering roles",
+    "badge": "Available for Engineering roles",
     "title": "Orlando Marrero",
     "subtitle": "Software Engineer · AI Engineer",
     "description": "Recently graduated Software Engineer (CUJAE, Havana) with 2 years of experience building desktop and web applications, including hands-on experience integrating small, on-device language models into a production speech-transcription system as part of my undergraduate thesis. Comfortable across the full stack, from desktop UI to backend services in Java / Spring Boot, with a growing focus on local LLM inference, NLP pipelines, and prompt engineering. Currently deepening agentic AI skills with LangGraph.",
