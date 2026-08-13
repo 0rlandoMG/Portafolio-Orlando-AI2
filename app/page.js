@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
+import Skills from "../components/Skills";
 import projects from "../data/projects";
 import { useLang } from "../context/LanguageProvider";
 
@@ -72,13 +73,10 @@ export default function HomePage() {
                   <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
                   {t("about.keyArea2")}
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
-                  {t("about.keyArea3")}
-                </li>
               </ul>
             </div>
           </div>
+          <Skills />
         </div>
       </section>
       <section id="contact" className="mt-20 scroll-mt-24">

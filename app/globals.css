@@ -34,6 +34,10 @@ html {
     animation: none;
     opacity: 1;
   }
+  .animate-node-pulse {
+    animation: none;
+    opacity: 0.6;
+  }
   html {
     scroll-behavior: auto;
   }

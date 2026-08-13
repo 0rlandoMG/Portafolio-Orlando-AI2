@@ -38,9 +38,14 @@ module.exports = {
           "0%, 49%": { opacity: "1" },
           "50%, 100%": { opacity: "0" },
         },
+        "node-pulse": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(1.4)" },
+        },
       },
       animation: {
         blink: "blink 1.1s steps(1) infinite",
+        "node-pulse": "node-pulse 3s ease-in-out infinite",
       },
     },
   },
