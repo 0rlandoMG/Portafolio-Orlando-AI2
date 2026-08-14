@@ -4,6 +4,7 @@ import { useState } from "react";
 import Hero from "../components/Hero";
 import ProjectCard from "../components/ProjectCard";
 import Skills from "../components/Skills";
+import NeuralBackground from "../components/NeuralBackground";
 import projects from "../data/projects";
 import { useLang } from "../context/LanguageProvider";
 
@@ -48,35 +49,38 @@ export default function HomePage() {
         </div>
       </section>
       <section id="about" className="mt-20 scroll-mt-24">
-        <div className="rounded-xl border border-brand-borderLight bg-brand-surfaceLight p-8 shadow-soft dark:border-brand-border dark:bg-brand-surface dark:shadow-none">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-mint">
-            {t("navbar.about")}
-          </p>
-          <h2 className="mt-2 text-3xl font-semibold tracking-tight text-brand-textLight dark:text-brand-text">
-            {t("about.title")}
-          </h2>
-          <div className="mt-8 grid gap-8 lg:grid-cols-2">
-            <div className="space-y-4 text-sm leading-7 text-brand-mutedLight dark:text-brand-muted">
-              <p>{t("about.paragraph1")}</p>
-              <p>{t("about.paragraph2")}</p>
+        <div className="relative overflow-hidden rounded-xl border border-brand-borderLight bg-brand-surfaceLight p-8 shadow-soft dark:border-brand-border dark:bg-brand-surface dark:shadow-none">
+          <NeuralBackground />
+          <div className="relative">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-mint">
+              {t("navbar.about")}
+            </p>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight text-brand-textLight dark:text-brand-text">
+              {t("about.title")}
+            </h2>
+            <div className="mt-8 grid gap-8 lg:grid-cols-2">
+              <div className="space-y-4 text-sm leading-7 text-brand-mutedLight dark:text-brand-muted">
+                <p>{t("about.paragraph1")}</p>
+                <p>{t("about.paragraph2")}</p>
+              </div>
+              <div className="rounded-lg border border-brand-borderLight bg-brand-surfaceLight/80 p-5 backdrop-blur-sm dark:border-brand-border dark:bg-brand-surface/80">
+                <p className="text-sm font-semibold text-brand-textLight dark:text-brand-text">
+                  {t("about.keyAreasTitle")}
+                </p>
+                <ul className="mt-3 space-y-2.5 text-sm text-brand-mutedLight dark:text-brand-muted">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
+                    {t("about.keyArea1")}
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
+                    {t("about.keyArea2")}
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className="rounded-lg border border-brand-borderLight bg-black/[0.02] p-5 dark:border-brand-border dark:bg-white/[0.02]">
-              <p className="text-sm font-semibold text-brand-textLight dark:text-brand-text">
-                {t("about.keyAreasTitle")}
-              </p>
-              <ul className="mt-3 space-y-2.5 text-sm text-brand-mutedLight dark:text-brand-muted">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
-                  {t("about.keyArea1")}
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-brand-mint" />
-                  {t("about.keyArea2")}
-                </li>
-              </ul>
-            </div>
+            <Skills />
           </div>
-          <Skills />
         </div>
       </section>
       <section id="contact" className="mt-20 scroll-mt-24">
