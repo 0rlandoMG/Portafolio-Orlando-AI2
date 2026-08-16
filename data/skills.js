@@ -7,6 +7,8 @@ const skills = [
       { name: "Phi-4-mini", icon: "model" },
       { name: "llama.cpp", icon: "model" },
       { name: "Whisper / WhisperX", icon: "waveform" },
+      { name: "Hugging Face", icon: "huggingface" },
+      { name: "LangChain", icon: "langchain" },
       { name: "LangGraph", icon: "brain" },
     ],
   },
@@ -19,6 +21,8 @@ const skills = [
       { name: "SQLite", icon: "sqlite" },
       { name: "REST APIs", icon: "api" },
       { name: "C / C++", icon: "code" },
+      { name: "Nest.js", icon: "nestjs" },
+      { name: "FastAPI", icon: "fastapi" },
     ],
   },
   {
@@ -35,6 +39,10 @@ const skills = [
     category: "Tools",
     items: [
       { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Docker", icon: "docker" },
+      { name: "Linux", icon: "linux" },
+      { name: "VS Code", icon: "code" },
       { name: "Agile", icon: "team" },
     ],
   },

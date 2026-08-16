@@ -1,6 +1,6 @@
 "use client";
 
-import { SiPython, SiPytorch, SiPostgresql, SiSqlite, SiSpring, SiVuedotjs, SiJavascript, SiGit } from "react-icons/si";
+import { SiPython, SiPytorch, SiPostgresql, SiSqlite, SiSpring, SiVuedotjs, SiJavascript, SiGit, SiHuggingface, SiLangchain, SiNestjs, SiFastapi, SiDocker, SiLinux, SiGithub } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { TbApi, TbCpu, TbWaveSine, TbBrain, TbDeviceDesktop, TbWindow, TbLanguage, TbUsers, TbCode } from "react-icons/tb";
 import skills, { expertise } from "../data/skills";
@@ -16,6 +16,13 @@ const ICONS = {
   vue: SiVuedotjs,
   javascript: SiJavascript,
   git: SiGit,
+  github: SiGithub,
+  huggingface: SiHuggingface,
+  langchain: SiLangchain,
+  nestjs: SiNestjs,
+  fastapi: SiFastapi,
+  docker: SiDocker,
+  linux: SiLinux,
   api: TbApi,
   model: TbCpu,
   waveform: TbWaveSine,

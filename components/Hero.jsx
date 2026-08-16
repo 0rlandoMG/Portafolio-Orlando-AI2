@@ -31,8 +31,8 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="/Orlando_Marrero_Gonzalez_AI_Engineer_cv.pdf"
-              download="Orlando_Marrero_Gonzalez_AI_Engineer_cv.pdf"
+              href="/Orlando_Marrero_Gonzalez_AI_Engineer_CV.pdf"
+              download="Orlando_Marrero_Gonzalez_AI_Engineer_CV.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-textLight px-5 py-3 text-sm font-semibold text-brand-bgLight transition hover:opacity-85 focus:outline-none focus:ring-2 focus:ring-brand-mint focus:ring-offset-2 focus:ring-offset-brand-bgLight dark:bg-brand-text dark:text-brand-bg dark:focus:ring-offset-brand-bg"
             >
               {t("hero.ctaDownload")}
